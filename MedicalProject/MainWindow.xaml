@@ -1,0 +1,45 @@
+﻿<Window x:Class="MedicalProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="Poliklinika" Height="750" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="ShowPatientWinBtn" Content="Pacieti" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Click="ShowPatientWinBtn_Click" FontSize="18" Margin="196,173,151,38"/>
+
+        <Button x:Name="ShowDoctorWinBtn" Content=" Lékaři" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="150" Grid.Column="1" Click="ShowDoctorWinBtn_Click" FontSize="18" Margin="153,173,194,38" />
+
+        <TextBlock x:Name="time" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Height="44" Width="236" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="25"/>
+
+        <Image x:Name="logoD" Height="53" Margin="242,-780,696,0"  >
+            <Image.Source>
+                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\logoD.png"></BitmapImage>
+            </Image.Source>
+        </Image>
+        <Image x:Name="patientImg" Height="53" Margin="242,-1080,696,0">
+            <Image.Source>
+                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\patient.png"></BitmapImage>
+            </Image.Source>
+        </Image>
+        <Image Height="53" Margin="242,-500,696,0">
+            <Image.Source>
+                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\logoZ.png"></BitmapImage>
+            </Image.Source>
+        </Image>
+
+        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="odhlásit se" Width="100" Height="50"  Click="Button_Click"/>
+
+    </Grid>
+</Window>

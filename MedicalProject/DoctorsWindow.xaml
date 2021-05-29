@@ -1,0 +1,26 @@
+﻿<Window x:Class="MedicalProject.DoctorsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="DoctorsWindow" Height="700" Width="600" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Button x:Name="BackBtn" Content="zpět" HorizontalAlignment="Left" Width="40" Height="30" Click="BackBtn_Click" Margin="544,0,-0.4,0"></Button>
+        <Label Content="List doktorů" FontSize="25" HorizontalAlignment="Center"></Label>
+
+        <DataGrid Margin="0,50" x:Name="DataGridDoctors" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Height="277" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Jméno" FontSize="25" Binding="{Binding Jmeno}"></DataGridTextColumn>
+                <DataGridTextColumn Header=" Příjmení" FontSize="25" Binding="{Binding Prijmeni}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Specializace" FontSize="25" Binding="{Binding Specializace}"></DataGridTextColumn>
+                <DataGridTextColumn Header="PrihlasovaciJmeno" FontSize="25" Binding="{Binding PrihlasovaciJmeno}"></DataGridTextColumn>
+                <DataGridTextColumn Header="PrihlasovaciHeslo" FontSize="25" Binding="{Binding PrihlasovaciHeslo}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Height="30" Width="120" Content="přidat" x:Name="AddDoctorBtn" Click="AddDoctorBtn_Click" />
+        <Button Height="30" Width="120" Content="odstranit" x:Name="DeleteDoctorBtn" Click="DeleteDoctorBtn_Click"></Button>
+    </StackPanel>
+</Window>

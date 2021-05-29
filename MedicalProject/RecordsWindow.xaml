@@ -1,0 +1,68 @@
+﻿<Window x:Class="MedicalProject.RecordsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="RecordsWindow" Height="500" SizeToContent="Width">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="7" x:Name="backBtn" HorizontalAlignment="Right" Width="40" Height="30" VerticalAlignment="Top" Content="zpět" Click="backBtn_Click"></Button>
+
+        <Button x:Name="AddRecord" Grid.Column="6" Margin="10" Content="přidat záznam"></Button>
+
+        <Label Grid.Row="1" Content="Jméno" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock  x:Name="RecordName" Grid.Row="2" Grid.Column="0" FontSize="20"  HorizontalAlignment="Center" VerticalAlignment="Top" Text="jmeno"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="1" Content="Příjmení" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock x:Name="RecordSurname" Grid.Row="2" Grid.Column="1" FontSize="20" Text="Příjmení"  HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="2" Content="Datum narození" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock x:Name="RecordDate" Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Top" Text="Dat.Nar" FontSize="17"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="3" Content="Adresa bydliště" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock x:Name="RecordStreet" Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Top" Text="Adresa byd." FontSize="20"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="4" Content="Rodné číslo" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock x:Name="RecordNumber" Grid.Row="2" Grid.Column="4" FontSize="20" Text="Rodne č." VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+        <Label Grid.Row="1" Grid.Column="5" Content="Pojišťovna" HorizontalAlignment="Center" FontSize="12"></Label>
+        <TextBlock x:Name="RecordInsurance" Text="Pojistovna" FontSize="20" VerticalAlignment="top" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"></TextBlock>
+
+        <DataGrid x:Name="RecordsDataGrid" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="244" Margin="0,97,0,0" Grid.Row="3" VerticalAlignment="Top" Width="840" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                
+                <DataGridTextColumn Header="Datum vzniku" Binding="{Binding DatumVzniku}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Ošetřující lékař" Binding="{Binding OsetrujiciLekar}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Objektivní popis" Binding="{Binding ObjektivniPopis}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Stav" Binding="{Binding Stav}" ></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Subjektivni popis" Binding="{Binding SubjektivniPopis}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Medikace" Binding="{Binding Medikace}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Datum kontroly" Binding="{Binding DatumKontroly}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="Id pacienta" Binding="{Binding IdPacienta}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="id kontrola" Binding="{Binding IdKontrola}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="MedicalProject.EditPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="EditPatientWindow" Width="300" SizeToContent="Height" WindowStartupLocation="CenterScreen">
+    <StackPanel Margin="15">
+        <Label>Jméno</Label>
+        <TextBox Text="{Binding Jmeno}"></TextBox>
+        
+        <Label>Příjmení</Label>
+        <TextBox Text="{Binding Prijmeni}"></TextBox>
+
+        <Label>Datum narození</Label>
+        <TextBox Text="{Binding DatumNarozeni}"></TextBox>
+
+        <Label>Rodné číslo</Label>
+        <TextBox Text="{Binding RodneCislo}"></TextBox>
+
+        <Label>Adresa bydliště</Label>
+        <TextBox Text="{Binding AdresaBydliste}"></TextBox>
+
+        <Label>Pojišťovna</Label>
+        <TextBox Text="{Binding Pojistovna}"></TextBox> 
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="OkBtn" Content="OK" Margin="10" Padding="5" Click="OkBtn_Click"></Button>
+            <Button x:Name="Cancel" Content="zavřít" Margin="10" Padding="5" Click="Cancel_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

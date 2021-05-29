@@ -1,0 +1,24 @@
+﻿<Window x:Class="MedicalProject.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="Přihlásit se " SizeToContent="Height" Width="350" WindowStartupLocation="CenterScreen" Background="gray" >
+
+    <Border Background="#2e3137" CornerRadius="20" Margin="20">
+        <StackPanel Margin="20">
+            <Label Content="Přihlášení" Foreground="White" FontSize="25" HorizontalAlignment="Center"></Label>
+            <Separator></Separator>
+            <Label Content="Jméno" Foreground="White" FontSize="18" Margin="0,20,0,0"></Label>
+            <TextBox x:Name="usernameTextBox" Background="#545d6a" Foreground="White" FontSize="18"></TextBox>
+            <Label Content="Heslo" Foreground="White" FontSize="18" Margin="0,20,0,0"></Label>
+            <PasswordBox x:Name="passwordTextBox" PasswordChar="*" Background="#545d6a" FontSize="18" ></PasswordBox>
+            <Button x:Name="loginBtn" Foreground="Black" FontSize="18" Margin="0,40,0,0" Height="30" Width="120" Content="Přihlásit se" BorderBrush="gray" Click="loginBtn_Click"></Button>
+        </StackPanel>
+    </Border>
+
+
+    
+</Window>
