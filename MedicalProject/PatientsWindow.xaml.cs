@@ -107,11 +107,12 @@ namespace MedicalProject
                 SearchingPatient.AdresaBydliste = (this.DataGridPatients.SelectedCells[3].Column.GetCellContent(data) as TextBlock)?.Text;
                 SearchingPatient.RodneCislo = (this.DataGridPatients.SelectedCells[4].Column.GetCellContent(data) as TextBlock)?.Text;
                 SearchingPatient.Pojistovna = (this.DataGridPatients.SelectedCells[5].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.Id = Convert.ToInt32((this.DataGridPatients.SelectedCells[6].Column.GetCellContent(data) as TextBlock)?.Text);
                 UpdateLayout();
             }
             catch
             {
-
+                
             }
         }
     }
