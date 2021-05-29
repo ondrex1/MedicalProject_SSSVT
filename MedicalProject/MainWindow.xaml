@@ -25,17 +25,17 @@
 
         <Image x:Name="logoD" Height="53" Margin="242,-780,696,0"  >
             <Image.Source>
-                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\logoD.png"></BitmapImage>
+                <BitmapImage UriSource="images\logoD.png"></BitmapImage>
             </Image.Source>
         </Image>
         <Image x:Name="patientImg" Height="53" Margin="242,-1080,696,0">
             <Image.Source>
-                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\patient.png"></BitmapImage>
+                <BitmapImage UriSource="images\patient.png"></BitmapImage>
             </Image.Source>
         </Image>
         <Image Height="53" Margin="242,-500,696,0">
             <Image.Source>
-                <BitmapImage UriSource="C:\Users\Ondřej Husák\source\repos\MedicalProject\MedicalProject\images\logoZ.png"></BitmapImage>
+                <BitmapImage UriSource="images\logoZ.png"></BitmapImage>
             </Image.Source>
         </Image>
 

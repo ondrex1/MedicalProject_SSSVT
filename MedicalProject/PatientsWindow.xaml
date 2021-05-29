@@ -17,7 +17,7 @@
 
 
         <Label Content="List pacientů" HorizontalAlignment="Center" Width="156" FontSize="22" Margin="363,10,369,10" FontFamily="Verdana" Height="35"/>
-        <DataGrid x:Name="DataGridPatients" HorizontalAlignment="Stretch"  IsReadOnly="true" AutoGenerateColumns="False" Height="576" AlternatingRowBackground="#FFB6B6B6" >
+        <DataGrid x:Name="DataGridPatients" HorizontalAlignment="Stretch"  IsReadOnly="true" AutoGenerateColumns="False" Height="576" AlternatingRowBackground="#FFB6B6B6" SelectionChanged="DataGridPatients_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Příjmené" Binding="{Binding Prijmeni}" FontSize="20" CanUserResize="False"/>
@@ -25,6 +25,7 @@
                 <DataGridTextColumn Header="Rodné číslo" Binding="{Binding RodneCislo}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Adresa Bydlistě" Binding="{Binding AdresaBydliste}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Pojišťovna" Binding="{Binding Pojistovna}" FontSize="20" CanUserResize="False"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" FontSize="20" CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
         <Border BorderBrush="Black" BorderThickness="1" Height="100"/>

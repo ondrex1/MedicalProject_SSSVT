@@ -23,18 +23,9 @@ namespace MedicalProject
         {
             PatientsWindow patientsWindow = new PatientsWindow();
 
-            string data = "Ondra";
             string query = $"SELECT p.Id, p.DatumVzniku, p.OsetrujiciLekar, p.Stav, p.SubjektivniPopis, p.ObjektivniPopis, p.Medikace, p.DatumKontroly, p.IdKontrola, p.IdPacienta " +
-                $"FROM tbProblem p inner join tbPacienti pac on p.IdPacienta = pac.Id WHERE pac.Jmeno = '{data}'";
-            try
-            {
-                 data = patientsWindow.DataGridPatients.SelectedCells[0].Column.GetCellContent(patientsWindow.DataGridPatients.SelectedItem).ToString();
-
-            }
-            catch
-            {
-
-            }
+                $"FROM tbProblem p inner join tbPacienti pac on p.IdPacienta = pac.Id WHERE pac.Id = {SearchingPatient.Id}";
+     
 
             return this.context.records.FromSqlRaw(query).ToList();
 

@@ -21,14 +21,12 @@ namespace MedicalProject
     {
         private PatientDataModel model = new PatientDataModel();
 
-        
+
 
         public PatientsWindow()
         {
             InitializeComponent();
-
             this.DataGridPatients.ItemsSource = this.model.Data;
-
         }
 
         private void AddPatientBtn_Click(object sender, RoutedEventArgs e)
@@ -71,36 +69,23 @@ namespace MedicalProject
         }
 
 
-        
+
 
         private void ShowPatientCard_Click(object sender, RoutedEventArgs e)
         {
-            Patient patient = new Patient();
-            if (this.DataGridPatients.SelectedIndex != -1)
-            {
-                RecordsWindow records = new RecordsWindow();
+            new SearchingPatient();
+            RecordsWindow records = new RecordsWindow();
 
-                var data = this.DataGridPatients.SelectedItem;
-
-                string name1 = (this.DataGridPatients.SelectedCells[0].Column.GetCellContent(data) as TextBlock).Text;
-                string surname1 = (this.DataGridPatients.SelectedCells[1].Column.GetCellContent(data) as TextBlock).Text;
-                string date1 = (this.DataGridPatients.SelectedCells[2].Column.GetCellContent(data) as TextBlock).Text;
-                string street1 = (this.DataGridPatients.SelectedCells[3].Column.GetCellContent(data) as TextBlock).Text;
-                string number1 = (this.DataGridPatients.SelectedCells[4].Column.GetCellContent(data) as TextBlock).Text;
-                string insurance1 = (this.DataGridPatients.SelectedCells[5].Column.GetCellContent(data) as TextBlock).Text;
+            records.RecordName.Text = SearchingPatient.Jmeno;
+            records.RecordSurname.Text = SearchingPatient.Prijmeni;
+            records.RecordDate.Text = SearchingPatient.DatumNarozeni;
+            records.RecordStreet.Text = SearchingPatient.AdresaBydliste;
+            records.RecordNumber.Text = SearchingPatient.RodneCislo;
+            records.RecordInsurance.Text = SearchingPatient.Pojistovna;
 
 
-                records.RecordName.Text = name1;
-                records.RecordSurname.Text = surname1;
-                records.RecordDate.Text = date1;
-                records.RecordStreet.Text = street1;
-                records.RecordNumber.Text = number1;
-                records.RecordInsurance.Text = insurance1;
-
-                records.Show();
-                this.Close();
-
-            }
+            records.Show();
+            this.Close();
 
         }
 
@@ -111,5 +96,23 @@ namespace MedicalProject
             this.Close();
         }
 
+        private void DataGridPatients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                var data = this.DataGridPatients.SelectedItem;
+                SearchingPatient.Jmeno = (this.DataGridPatients.SelectedCells[0].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.Prijmeni = (this.DataGridPatients.SelectedCells[1].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.DatumNarozeni = (this.DataGridPatients.SelectedCells[2].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.AdresaBydliste = (this.DataGridPatients.SelectedCells[3].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.RodneCislo = (this.DataGridPatients.SelectedCells[4].Column.GetCellContent(data) as TextBlock)?.Text;
+                SearchingPatient.Pojistovna = (this.DataGridPatients.SelectedCells[5].Column.GetCellContent(data) as TextBlock)?.Text;
+                UpdateLayout();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

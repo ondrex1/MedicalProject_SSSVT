@@ -27,7 +27,7 @@
 
         <Button x:Name="AddRecord" Grid.Column="6" Margin="10" Content="přidat záznam"></Button>
 
-        <Label Grid.Row="1" Content="Jméno" HorizontalAlignment="Center" FontSize="12"></Label>
+        <Label Grid.Row="1" Content="Jméno" HorizontalAlignment="Center" FontSize="12" Margin="28,0,22,0" Width="50"></Label>
         <TextBlock  x:Name="RecordName" Grid.Row="2" Grid.Column="0" FontSize="20"  HorizontalAlignment="Center" VerticalAlignment="Top" Text="jmeno"></TextBlock>
         <Label Grid.Row="1" Grid.Column="1" Content="Příjmení" HorizontalAlignment="Center" FontSize="12"></Label>
         <TextBlock x:Name="RecordSurname" Grid.Row="2" Grid.Column="1" FontSize="20" Text="Příjmení"  HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
