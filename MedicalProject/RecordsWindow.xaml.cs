@@ -34,5 +34,18 @@ namespace MedicalProject
             patientsWindow.Show();
             this.Close();
         }
+
+        private void AddRecord_Click(object sender, RoutedEventArgs e)
+        {
+            RecordsDataModel model = new RecordsDataModel();
+
+            AddRecordsWindow addRecordsWindow = new AddRecordsWindow(new Records());
+
+            if (addRecordsWindow.ShowDialog() == true)
+            {
+                this.recordsModel.Add(addRecordsWindow.records);
+
+            }
+        }
     }
 }

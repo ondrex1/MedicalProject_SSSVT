@@ -37,6 +37,12 @@ namespace MedicalProject
              
         }
 
+        public void insert(Records records)
+        {
+            this.context.records.Add(records);
+            this.context.SaveChanges();
+        }
+
 
 
     }

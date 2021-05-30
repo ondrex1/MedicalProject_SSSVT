@@ -1,0 +1,43 @@
+﻿<Window x:Class="MedicalProject.AddRecordsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalProject"
+        mc:Ignorable="d"
+        Title="AddRecordsWindow" Height="500" Width="300">
+    <StackPanel Margin="15">
+        <Label>DatumVzniku</Label>
+        <TextBox Text="{Binding DatumVzniku}"></TextBox>
+
+        <Label>OsetrujiciLekar</Label>
+        <TextBox Text="{Binding OsetrujiciLekar}"></TextBox>
+
+        <Label>Stav</Label>
+        <TextBox Text="{Binding Stav}"></TextBox>
+
+        <Label>SubjektivniPopis</Label>
+        <TextBox Text="{Binding SubjektivniPopis}"></TextBox>
+
+        <Label>ObjektivniPopis</Label>
+        <TextBox Text="{Binding ObjektivniPopis}"></TextBox>
+
+        <Label>Medikace</Label>
+        <TextBox Text="{Binding Medikace}"></TextBox>
+
+        <Label>DatumKontroly</Label>
+        <TextBox Text="{Binding DatumKontroly}"></TextBox>
+
+        <Label>IdKontrola</Label>
+        <TextBox Text="{Binding IdKontrola}"></TextBox>
+
+
+        <Label>IdPacienta</Label>
+        <TextBox Text="{Binding IdPacienta}"></TextBox>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="OkBtn" Content="OK" Margin="10" Padding="5" Click="OkBtn_Click"></Button>
+            <Button x:Name="Cancel" Content="zavřít" Margin="10" Padding="5" Click="Cancel_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

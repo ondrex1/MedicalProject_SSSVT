@@ -17,5 +17,12 @@ namespace MedicalProject
         {
             this.Data = new ObservableCollection<Records>(this.recordsRepository.FindByName());
         }
+
+        public void Add(Records records)
+        {
+            this.Data.Add(records);
+            this.recordsRepository.insert(records);
+
+        }
     }
 }

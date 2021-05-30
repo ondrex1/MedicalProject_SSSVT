@@ -166,6 +166,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddRecordsWindow.xaml.cs">
+      <DependentUpon>AddRecordsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Patients\SearchingPatient.cs" />
     <Compile Include="Records.cs" />
     <Compile Include="RecordsDataModel.cs" />
@@ -173,6 +176,10 @@
     <Compile Include="RecordsWindow.xaml.cs">
       <DependentUpon>RecordsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddRecordsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
