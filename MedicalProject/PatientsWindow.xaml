@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
         Title="PatientsWindow" Height="750" Width="893.5" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <StackPanel>
+    <StackPanel Background="LightGreen">
         <Grid HorizontalAlignment="Right" Height="85" Width="974" Margin="0,0,10,0"  >
             <Button x:Name="AddPatientBtn" Content="přidat" Width="110" Click="AddPatientBtn_Click" Margin="302,26,562,11" />
             <Button  HorizontalAlignment="Center" x:Name="DeletePatientBtn" Content="odstranit"  Width="110" Click="DeletePatientBtn_Click" Height="46" Margin="584,28,280,11" />
@@ -17,19 +17,27 @@
 
 
         <Label Content="List pacientů" HorizontalAlignment="Center" Width="156" FontSize="22" Margin="363,10,369,10" FontFamily="Verdana" Height="35"/>
-        <DataGrid x:Name="DataGridPatients" HorizontalAlignment="Stretch"  IsReadOnly="true" AutoGenerateColumns="False" Height="576" AlternatingRowBackground="#FFB6B6B6" SelectionChanged="DataGridPatients_SelectionChanged" >
+        <DataGrid Background="LightGreen" x:Name="DataGridPatients" HorizontalAlignment="Stretch"  IsReadOnly="true" AutoGenerateColumns="False" Height="581" AlternatingRowBackground="#FFB6B6B6" SelectionChanged="DataGridPatients_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Příjmené" Binding="{Binding Prijmeni}" FontSize="20" CanUserResize="False"/>
-                <DataGridTextColumn Header="Datum narození" Binding="{Binding DatumNarozeni,StringFormat=d}" FontSize="20" CanUserResize="False"/>
+                <DataGridTextColumn Header="Datum narození" Binding="{Binding DatumNarozeni,StringFormat=dd-MM-yyyy}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Rodné číslo" Binding="{Binding RodneCislo}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Adresa Bydlistě" Binding="{Binding AdresaBydliste}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Pojišťovna" Binding="{Binding Pojistovna}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" FontSize="20" CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Border BorderBrush="Black" BorderThickness="1" Height="100"/>
-        <Button Content="Button"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="2" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
     </StackPanel>
 
 

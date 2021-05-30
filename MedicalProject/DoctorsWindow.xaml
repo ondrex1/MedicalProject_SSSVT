@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="DoctorsWindow" Height="700" Width="600" WindowStartupLocation="CenterScreen">
-    <StackPanel>
+        Title="DoctorsWindow" Height="600" Width="600" WindowStartupLocation="CenterScreen">
+    <StackPanel Background="LightGreen">
         <Button x:Name="BackBtn" Content="zpět" HorizontalAlignment="Left" Width="40" Height="30" Click="BackBtn_Click" Margin="544,0,-0.4,0"></Button>
         <Label Content="List doktorů" FontSize="25" HorizontalAlignment="Center"></Label>
 
-        <DataGrid Margin="0,50" x:Name="DataGridDoctors" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom" Height="277" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Margin="0,50" x:Name="DataGridDoctors" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom"  AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Jméno" FontSize="25" Binding="{Binding Jmeno}"></DataGridTextColumn>
                 <DataGridTextColumn Header=" Příjmení" FontSize="25" Binding="{Binding Prijmeni}"></DataGridTextColumn>

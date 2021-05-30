@@ -14,7 +14,8 @@
         <TextBox Text="{Binding Prijmeni}"></TextBox>
 
         <Label>Datum narození</Label>
-        <TextBox Text="{Binding DatumNarozeni}"></TextBox>
+        <DatePicker x:Name="DP1" Text="{Binding DatumNarozeni}" SelectedDateFormat="Short" FirstDayOfWeek="Sunday" SelectedDate="03/02/2021"/>
+
 
         <Label>Rodné číslo</Label>
         <TextBox Text="{Binding RodneCislo}"></TextBox>

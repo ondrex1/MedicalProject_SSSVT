@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
         Title="Poliklinika" Height="750" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
-    <Grid>
+
+    <Grid Background="LightGreen">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -17,29 +19,25 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button x:Name="ShowPatientWinBtn" Content="Pacieti" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Height="150" Click="ShowPatientWinBtn_Click" FontSize="18" Margin="196,173,151,38"/>
+        <Label Content="Poliklinika" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" ></Label>
 
-        <Button x:Name="ShowDoctorWinBtn" Content=" Lékaři" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="150" Grid.Column="1" Click="ShowDoctorWinBtn_Click" FontSize="18" Margin="153,173,194,38" />
+        <Separator Margin="250,24,247,286" Background="Black" Grid.ColumnSpan="2" Width="150" ></Separator>
+
+        <Border Grid.Row="0" Background="#FFA8A8A8" Margin="200,70" CornerRadius="50" Grid.ColumnSpan="2" >
+            <Button x:Name="ShowPatientWinBtn" Content="Pacieti" Width="406" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Click="ShowPatientWinBtn_Click" FontSize="18" Grid.ColumnSpan="2" Margin="92,0,96,74"/>
+        </Border>
+
+        <Border Background="#FFA8A8A8" Grid.ColumnSpan="2" Margin="200,70" Grid.Row="1" CornerRadius="50">
+            <Button x:Name="ShowDoctorWinBtn" Content=" Lékaři" Grid.Column="1" Click="ShowDoctorWinBtn_Click" FontSize="18" Width="400" Height="70"/>
+        </Border>
+
+
 
         <TextBlock x:Name="time" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Height="44" Width="236" VerticalAlignment="Bottom" HorizontalAlignment="Right"  FontSize="25"/>
 
-        <Image x:Name="logoD" Height="53" Margin="242,-780,696,0"  >
-            <Image.Source>
-                <BitmapImage UriSource="images\logoD.png"></BitmapImage>
-            </Image.Source>
-        </Image>
-        <Image x:Name="patientImg" Height="53" Margin="242,-1080,696,0">
-            <Image.Source>
-                <BitmapImage UriSource="images\patient.png"></BitmapImage>
-            </Image.Source>
-        </Image>
-        <Image Height="53" Margin="242,-500,696,0">
-            <Image.Source>
-                <BitmapImage UriSource="images\logoZ.png"></BitmapImage>
-            </Image.Source>
-        </Image>
 
-        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="odhlásit se" Width="100" Height="50"  Click="Button_Click"/>
+
+        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="odhlásit se" Width="100" Height="50" VerticalAlignment="Bottom"  Click="Button_Click"/>
 
     </Grid>
 </Window>
