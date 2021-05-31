@@ -40,7 +40,11 @@
         <Label Grid.Row="1" Grid.Column="5" Content="Pojišťovna" HorizontalAlignment="Center" FontSize="12"></Label>
         <TextBlock x:Name="RecordInsurance" Text="Pojistovna" FontSize="20" VerticalAlignment="top" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"></TextBlock>
 
-        <DataGrid x:Name="RecordsDataGrid" Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="244" Margin="0,97,0,0" Grid.Row="3" VerticalAlignment="Top" Width="840" AutoGenerateColumns="False">
+        <Label Content="Id" FontSize="12" Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center"></Label>
+        <TextBlock x:Name="RecordId" Text="Id" FontSize="20" VerticalAlignment="top" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="2"></TextBlock>
+
+
+        <DataGrid x:Name="RecordsDataGrid" Grid.ColumnSpan="8" HorizontalAlignment="Left"  Margin="0,97,0,0" Grid.Row="3" VerticalAlignment="Top" Width="840" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
                 

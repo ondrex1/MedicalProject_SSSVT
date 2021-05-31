@@ -82,6 +82,7 @@ namespace MedicalProject
             records.RecordStreet.Text = SearchingPatient.AdresaBydliste;
             records.RecordNumber.Text = SearchingPatient.RodneCislo;
             records.RecordInsurance.Text = SearchingPatient.Pojistovna;
+            records.RecordId.Text = SearchingPatient.Id.ToString();
 
 
             records.Show();
