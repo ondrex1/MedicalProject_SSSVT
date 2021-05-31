@@ -31,18 +31,37 @@ namespace MedicalProject
 
         }
 
-        public List<Records> Find()
-        {
-            return context.records.FromSqlRaw("Select * from tbProblem").Where(a => a.IdPacienta == 89).ToList();
-             
-        }
 
         public void insert(Records records)
         {
             this.context.records.Add(records);
             this.context.SaveChanges();
         }
+        public void Delete(Records records)
+        {
+            this.context.Remove(records);
+            this.context.SaveChanges();
+        }
+        public void Edit(Records records)
+        {
+            
+            
+              Records db = this.context.records.Find(records.Id);
 
+              db.DatumKontroly = records.DatumKontroly;
+              db.DatumVzniku = records.DatumVzniku;
+              db.IdKontrola = records.IdKontrola;
+              db.IdPacienta = records.IdKontrola;
+              db.Medikace = records.Medikace;
+              db.ObjektivniPopis = records.Medikace;
+              db.OsetrujiciLekar = records.OsetrujiciLekar;
+              db.Stav = records.Stav;
+              db.SubjektivniPopis = records.SubjektivniPopis;
+            db.Id = records.Id;
+
+              this.context.SaveChanges();
+
+        }
 
 
     }

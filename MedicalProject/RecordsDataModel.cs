@@ -22,7 +22,18 @@ namespace MedicalProject
         {
             this.Data.Add(records);
             this.recordsRepository.insert(records);
-
         }
+
+        public void Remove(int index)
+        {
+            this.recordsRepository.Delete(this.Data[index]);
+            this.Data.RemoveAt(index);
+        }
+        public void Edit(Records records, int index)
+        {
+            this.Data[index] = records;
+            this.recordsRepository.Edit(records);
+        }
+
     }
 }

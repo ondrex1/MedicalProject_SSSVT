@@ -34,11 +34,9 @@ namespace MedicalProject
             patientsWindow.Show();
             this.Close();
         }
-
+        //přidat záznam
         private void AddRecord_Click(object sender, RoutedEventArgs e)
         {
-            RecordsDataModel model = new RecordsDataModel();
-
             AddRecordsWindow addRecordsWindow = new AddRecordsWindow(new Records());
 
             if (addRecordsWindow.ShowDialog() == true)
@@ -46,6 +44,32 @@ namespace MedicalProject
                 this.recordsModel.Add(addRecordsWindow.records);
 
             }
+        }
+        //odstranit záznam
+        private void removeRecord_Click(object sender, RoutedEventArgs e)
+        {
+            this.recordsModel.Remove(this.RecordsDataGrid.SelectedIndex);
+
+        }
+        //upravit záznam
+        private void editRecord_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (this.RecordsDataGrid.SelectedIndex<0)
+            {
+                return;
+            }
+
+            Records records = this.recordsModel.Data[this.RecordsDataGrid.SelectedIndex];
+
+            AddRecordsWindow addRecordsWindow = new AddRecordsWindow(records);
+
+            if (addRecordsWindow.ShowDialog() == true)
+            {
+                this.recordsModel.Edit(addRecordsWindow.records, this.RecordsDataGrid.SelectedIndex);
+                this.RecordsDataGrid.Items.Refresh();
+            }
+
         }
     }
 }
