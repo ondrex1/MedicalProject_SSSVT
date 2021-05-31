@@ -21,7 +21,6 @@ namespace MedicalProject
         }
         public List<Records> FindByName()
         {
-            PatientsWindow patientsWindow = new PatientsWindow();
 
             string query = $"SELECT p.Id, p.DatumVzniku, p.OsetrujiciLekar, p.Stav, p.SubjektivniPopis, p.ObjektivniPopis, p.Medikace, p.DatumKontroly, p.IdKontrola, p.IdPacienta " +
                 $"FROM tbProblem p inner join tbPacienti pac on p.IdPacienta = pac.Id WHERE pac.Id = {SearchingPatient.Id}";
@@ -45,10 +44,9 @@ namespace MedicalProject
         public void Edit(Records records)
         {
             
-            
-              Records db = this.context.records.Find(records.Id);
+              Records db = this.context.records.Find(records.IdPacienta);
 
-              db.DatumKontroly = records.DatumKontroly;
+              //db.DatumKontroly = records.DatumKontroly;
               db.DatumVzniku = records.DatumVzniku;
               db.IdKontrola = records.IdKontrola;
               db.IdPacienta = records.IdKontrola;
@@ -57,9 +55,8 @@ namespace MedicalProject
               db.OsetrujiciLekar = records.OsetrujiciLekar;
               db.Stav = records.Stav;
               db.SubjektivniPopis = records.SubjektivniPopis;
-            db.Id = records.Id;
+              db.Id = records.Id;
 
-              this.context.SaveChanges();
 
         }
 
