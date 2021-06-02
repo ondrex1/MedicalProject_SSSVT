@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace MedicalProject
 {
@@ -11,11 +12,14 @@ namespace MedicalProject
     {
         private RecordsRepository recordsRepository = new RecordsRepository();
 
-        public ObservableCollection<Records> Data { get; set; }
+        public ObservableCollection<Records> Data { get; set;}
 
         public RecordsDataModel()
         {
-            this.Data = new ObservableCollection<Records>(this.recordsRepository.FindByName());
+            PatientsWindow patientsWindow = new PatientsWindow();
+
+
+            this.Data = new ObservableCollection<Records>(this.recordsRepository.FindById(Patient.GetID));
         }
 
         public void Add(Records records)

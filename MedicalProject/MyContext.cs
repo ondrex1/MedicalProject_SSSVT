@@ -21,6 +21,8 @@ namespace MedicalProject
             optionsBuilder.UseMySQL("server=mysqlstudenti.litv.sssvt.cz;database=3c2_husakondrej_db1;user=husakondrej;password=123456");
         }
 
+
+
     }
 
 }

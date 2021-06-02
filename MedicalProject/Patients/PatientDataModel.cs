@@ -25,15 +25,9 @@ namespace MedicalProject
         }
         public void delete(int index)
         {
-            try
-            {
-                this.repository.delete(this.Data[index]);
-                this.Data.RemoveAt(index);
-            }
-            catch
-            {
 
-            }
+            this.repository.delete(this.Data[index]);
+            this.Data.RemoveAt(index);
 
 
         }

@@ -5,31 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="Poliklinika" Height="750" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="Poliklinika" Width="800" SizeToContent="Height" WindowStartupLocation="CenterScreen" >
 
-    <Grid Background="LightGreen">
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="360_F_251629484_zP45QMzYdOA6KKzqAuaGCmxfOrSjMYvB.jpg"/>
+        </Grid.Background>
 
         <Label Content="Poliklinika" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" ></Label>
 
-        <Separator Margin="250,24,247,286" Background="Black" Grid.ColumnSpan="2" Width="150" ></Separator>
 
-        <Border Grid.Row="0" Background="#FFA8A8A8" Margin="200,70" CornerRadius="50" Grid.ColumnSpan="2" >
-            <Button x:Name="ShowPatientWinBtn" Content="Pacieti" Width="406" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Click="ShowPatientWinBtn_Click" FontSize="18" Grid.ColumnSpan="2" Margin="92,0,96,74"/>
+
+        <Border  CornerRadius="20" Margin="200,100" >
+            <Border.Effect>
+                <DropShadowEffect Color="#FFB8EBF9" BlurRadius="10" RenderingBias="Quality" ShadowDepth="10"/>
+            </Border.Effect>
+            <Border.Background>
+                <SolidColorBrush Color="#FFE6E6E6"/>
+            </Border.Background>
+            <StackPanel Margin="20,100">
+                <Button x:Name="ShowPatientWinBtn" Content="Pacieti" Width="250" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="70" Click="ShowPatientWinBtn_Click" FontSize="18" />
+                <Separator  Background="Black" Width="300" />
+                <Button x:Name="ShowDoctorWinBtn" Content=" Lékaři" Grid.Column="1" Margin="20" Click="ShowDoctorWinBtn_Click" FontSize="18" Width="250" Height="70"/>
+            </StackPanel>
+
         </Border>
 
-        <Border Background="#FFA8A8A8" Grid.ColumnSpan="2" Margin="200,70" Grid.Row="1" CornerRadius="50">
-            <Button x:Name="ShowDoctorWinBtn" Content=" Lékaři" Grid.Column="1" Click="ShowDoctorWinBtn_Click" FontSize="18" Width="400" Height="70"/>
-        </Border>
+
 
 
 

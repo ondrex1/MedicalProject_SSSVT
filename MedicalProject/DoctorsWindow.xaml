@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="DoctorsWindow" Height="600" Width="600" WindowStartupLocation="CenterScreen">
-    <StackPanel Background="LightGreen">
-        <Button x:Name="BackBtn" Content="zpět" HorizontalAlignment="Left" Width="40" Height="30" Click="BackBtn_Click" Margin="544,0,-0.4,0"></Button>
-        <Label Content="List doktorů" FontSize="25" HorizontalAlignment="Center"></Label>
-
-        <DataGrid Margin="0,50" x:Name="DataGridDoctors" HorizontalAlignment="Stretch"  VerticalAlignment="Bottom"  AutoGenerateColumns="False" IsReadOnly="True">
+        Title="DoctorsWindow" SizeToContent="Height" Width="700" WindowStartupLocation="CenterScreen">
+    <StackPanel Background="#FFB8EBF9">
+        
+        <Button x:Name="BackBtn" Content="zpět" HorizontalAlignment="Right" Width="60" Height="25" Click="BackBtn_Click" ></Button>
+        <Label Margin="10" Content="List doktorů" FontSize="25" HorizontalAlignment="Center"></Label>
+        
+        <DataGrid ColumnHeaderHeight="30"  x:Name="DataGridDoctors" HorizontalAlignment="Center" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Jméno" FontSize="25" Binding="{Binding Jmeno}"></DataGridTextColumn>
                 <DataGridTextColumn Header=" Příjmení" FontSize="25" Binding="{Binding Prijmeni}"></DataGridTextColumn>
@@ -20,7 +21,21 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Height="30" Width="120" Content="přidat" x:Name="AddDoctorBtn" Click="AddDoctorBtn_Click" />
-        <Button Height="30" Width="120" Content="odstranit" x:Name="DeleteDoctorBtn" Click="DeleteDoctorBtn_Click"></Button>
+        <Border Background="#FFBBBBBB" Width="380" Height="100" CornerRadius="20" Margin="20">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Margin="10" Content="přidat" x:Name="AddDoctorBtn" Click="AddDoctorBtn_Click" />
+                <Button Margin="10" Content="odstranit" x:Name="DeleteDoctorBtn" Click="DeleteDoctorBtn_Click" Grid.Column="1"></Button>
+                <Button Margin="10" Grid.Column="2" Content="upravit" x:Name="EditDoctorBtn" Click="EditDoctorBtn_Click"></Button>
+            </Grid>
+        </Border>
     </StackPanel>
 </Window>

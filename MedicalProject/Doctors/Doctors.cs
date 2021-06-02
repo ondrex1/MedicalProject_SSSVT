@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace MedicalProject
         public string Specializace { get; set; }
         public string PrihlasovaciJmeno { get; set; }
         public string PrihlasovaciHeslo { get; set; }
+
 
 
     }

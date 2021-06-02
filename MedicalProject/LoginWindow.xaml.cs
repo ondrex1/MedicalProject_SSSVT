@@ -29,6 +29,9 @@ namespace MedicalProject
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
 
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
             //if (username != null)
             //{
             //    MessageBox.Show("");
@@ -41,26 +44,26 @@ namespace MedicalProject
             //else
             //{
             //    MessageBox.Show("incorrect");
+            ////}
+
+
+            //if (IsValidUsername() == true)
+            //{
+            //    if (IsValidPassword() == true)
+            //    {
+            //        MainWindow main = new MainWindow();
+            //        main.Show();
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("neplatné heslo");
+            //    }
             //}
-
-
-            if (IsValidUsername() == true)
-            {
-                if (IsValidPassword() == true)
-                {
-                    MainWindow main = new MainWindow();
-                    main.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("neplatné heslo");
-                }
-            }
-            else
-            {
-                MessageBox.Show("neplatné jméno");
-            }
+            //else
+            //{
+            //    MessageBox.Show("neplatné jméno");
+            //}
 
 
 
@@ -68,37 +71,37 @@ namespace MedicalProject
         }
         private bool IsValidUsername()
         {
-            MyContext context = new MyContext();
+            //MyContext context = new MyContext();
 
-            //pouze písmena
-            string valuetext = this.usernameTextBox.Text;
-            var username = context.Doctors.Where(i => i.PrihlasovaciJmeno == this.usernameTextBox.Text).FirstOrDefault();
-            var passwd = context.Doctors.Where(i => i.PrihlasovaciHeslo == this.passwordTextBox.Password).FirstOrDefault();
+            ////pouze písmena
+            //string valuetext = this.usernameTextBox.Text;
+            //var username = context.Doctors.Where(i => i.PrihlasovaciJmeno == this.usernameTextBox.Text).FirstOrDefault();
+            //var passwd = context.Doctors.Where(i => i.PrihlasovaciHeslo == this.passwordTextBox.Password).FirstOrDefault();
 
-            if (Regex.IsMatch(valuetext, @"^[a-zA-Z]+$"))
-            {
-                if (username != null)
-                {
-                    return true;
-                }
-            }
+            //if (Regex.IsMatch(valuetext, @"^[a-zA-Z]+$"))
+            //{
+            //    if (username != null)
+            //    {
+            //        return true;
+            //    }
+            //}
 
             return false;
         }
 
         private bool IsValidPassword()
         {
-            MyContext context = new MyContext();
-            //Heslo musí být v rozsahu 8-15 a musí obsahovat číslo
-            string valuePasswd = this.passwordTextBox.Password;
-            var passwd = context.Doctors.Where(i => i.PrihlasovaciHeslo == this.passwordTextBox.Password).FirstOrDefault();
-            if (Regex.IsMatch(valuePasswd, @"(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$"))
-            {
-                if (passwd != null)
-                {
-                    return true;
-                }
-            }
+            //MyContext context = new MyContext();
+            ////Heslo musí být v rozsahu 8-15 a musí obsahovat číslo
+            //string valuePasswd = this.passwordTextBox.Password;
+            //var passwd = context.Doctors.Where(i => i.PrihlasovaciHeslo == this.passwordTextBox.Password).FirstOrDefault();
+            //if (Regex.IsMatch(valuePasswd, @"(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$"))
+            //{
+            //    if (passwd != null)
+            //    {
+            //        return true;
+            //    }
+            //}
 
             return false;
 

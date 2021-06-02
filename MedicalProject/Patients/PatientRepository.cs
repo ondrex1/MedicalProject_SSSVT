@@ -25,6 +25,7 @@ namespace MedicalProject
         }
         public void delete(Patient patient)
         {
+
             this.context.Remove(patient);
             this.context.SaveChanges();
         }
@@ -34,6 +35,7 @@ namespace MedicalProject
             db.Jmeno = patient.Jmeno;
             db.Prijmeni = patient.Prijmeni;
             db.DatumNarozeni = patient.DatumNarozeni;
+            db.RodneCislo = patient.RodneCislo;
             db.AdresaBydliste = patient.AdresaBydliste;
             db.Pojistovna = patient.Pojistovna;
 

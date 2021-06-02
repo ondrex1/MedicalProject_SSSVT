@@ -169,7 +169,6 @@
     <Compile Include="AddRecordsWindow.xaml.cs">
       <DependentUpon>AddRecordsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Patients\SearchingPatient.cs" />
     <Compile Include="Records.cs" />
     <Compile Include="RecordsDataModel.cs" />
     <Compile Include="RecordsRepository.cs" />
@@ -268,6 +267,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\hospital.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hospital.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="360_F_251629484_zP45QMzYdOA6KKzqAuaGCmxfOrSjMYvB.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
         Title="RecordsWindow" Height="500" SizeToContent="Width">
-    <Grid Background="LightGreen" >
+    <Grid Background="#FFB8EBF9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
@@ -47,8 +47,9 @@
         <TextBlock x:Name="RecordId" Text="Id" FontSize="20" VerticalAlignment="top" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="2"></TextBlock>
 
 
-        <DataGrid x:Name="RecordsDataGrid" Grid.ColumnSpan="8" HorizontalAlignment="Left"  Grid.Row="4" VerticalAlignment="Top" Width="840" AutoGenerateColumns="False">
+        <DataGrid x:Name="RecordsDataGrid" Grid.ColumnSpan="8" Grid.Row="4" AutoGenerateColumns="False" Background="#FFB8EBF9">
             <DataGrid.Columns>
+                
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
                 
                 <DataGridTextColumn Header="Datum vzniku" Binding="{Binding DatumVzniku}"></DataGridTextColumn>

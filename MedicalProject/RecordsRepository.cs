@@ -19,15 +19,11 @@ namespace MedicalProject
         {
             return this.context.records.ToList();
         }
-        public List<Records> FindByName()
+        public List<Records> FindById(int patientId)
         {
-
-            string query = $"SELECT p.Id, p.DatumVzniku, p.OsetrujiciLekar, p.Stav, p.SubjektivniPopis, p.ObjektivniPopis, p.Medikace, p.DatumKontroly, p.IdKontrola, p.IdPacienta " +
-                $"FROM tbProblem p inner join tbPacienti pac on p.IdPacienta = pac.Id WHERE pac.Id = {SearchingPatient.Id}";
-     
-
-            return this.context.records.FromSqlRaw(query).ToList();
-
+            string query = "SELECT p.Id, p.DatumVzniku, p.OsetrujiciLekar, p.Stav, p.SubjektivniPopis, p.ObjektivniPopis, p.Medikace, p.DatumKontroly, p.IdKontrola, p.IdPacienta " +
+                $"FROM tbProblem p inner join tbPacienti pac on p.IdPacienta = pac.Id WHERE pac.Id = {patientId}";
+            return this.context.records.FromSqlRaw(query, patientId).ToList();
         }
 
 
@@ -42,11 +38,10 @@ namespace MedicalProject
             this.context.SaveChanges();
         }
         public void Edit(Records records)
-        {
-            
+        {            
               Records db = this.context.records.Find(records.IdPacienta);
-
-              //db.DatumKontroly = records.DatumKontroly;
+            
+              db.DatumKontroly = records.DatumKontroly;
               db.DatumVzniku = records.DatumVzniku;
               db.IdKontrola = records.IdKontrola;
               db.IdPacienta = records.IdKontrola;
@@ -56,8 +51,6 @@ namespace MedicalProject
               db.Stav = records.Stav;
               db.SubjektivniPopis = records.SubjektivniPopis;
               db.Id = records.Id;
-
-
         }
 
 

@@ -47,5 +47,26 @@ namespace MedicalProject
         {
             this.modelDoc.delete(this.DataGridDoctors.SelectedIndex);
         }
+
+        private void EditDoctorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.DataGridDoctors.SelectedIndex <0)
+            {
+                return;
+            }
+
+            Doctors doctors = this.modelDoc.DataDoc[this.DataGridDoctors.SelectedIndex];
+
+            EditDoctorWindow editDoctorWindow = new EditDoctorWindow(doctors);
+
+            if (editDoctorWindow.ShowDialog() == true)
+            {
+                this.modelDoc.update(editDoctorWindow.doctors, this.DataGridDoctors.SelectedIndex);
+                this.DataGridDoctors.Items.Refresh();
+
+            }
+
+
+        }
     }
 }

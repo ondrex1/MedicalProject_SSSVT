@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-X:\C#\MedicalProject\MedicalProject\obj\Debug\
+C:\Users\Ondřej Husák\Desktop\MedicalProject\MedicalProject\obj\Debug\
 MedicalProject
 none
 false
 DEBUG;TRACE
-X:\C#\MedicalProject\MedicalProject\App.xaml
+C:\Users\Ondřej Husák\Desktop\MedicalProject\MedicalProject\App.xaml
 81823931854
 
-24-1457657261
-1592009070299
+232052933930
+159291779101
 AddRecordsWindow.xaml;DoctorsWindow.xaml;EditDoctorWindow.xaml;EditPatientWindow.xaml;LoginWindow.xaml;MainWindow.xaml;PatientsWindow.xaml;RecordsWindow.xaml;
 
 True

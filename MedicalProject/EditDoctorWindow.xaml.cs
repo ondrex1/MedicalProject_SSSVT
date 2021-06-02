@@ -24,31 +24,34 @@ namespace MedicalProject
         public EditDoctorWindow(Doctors doctors)
         {
             InitializeComponent();
-            this.DataContext = doctors;
+
             this.doctors = doctors;
+            this.DataContext = doctors;
         }
 
         private void OkBtn_Click(object sender, RoutedEventArgs e)
         {
-         
-            if (IsValidUsername() == true)
-            {
-                if (IsValidPassword() == true)
-                {
-                    this.DialogResult = true;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Neplatný formát příhlašovacího hesla");
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("Neplatný formát příhlašovacího jména");
-            }
-            
+            this.DialogResult = true;
+            this.Close();
+
+            //if (IsValidUsername() == true)
+            //{
+            //    if (IsValidPassword() == true)
+            //    {
+            //        this.DialogResult = true;
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Neplatný formát příhlašovacího hesla");
+            //    }
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Neplatný formát příhlašovacího jména");
+            //}
+
         }
 
         public bool IsValidUsername()

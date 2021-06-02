@@ -28,17 +28,13 @@ namespace MedicalProject
 
         public void delete(int index)
         {
-            try
-            {
-                this.repositoryDoc.delete(this.DataDoc[index]);
-                this.DataDoc.RemoveAt(index);
-            }
-            catch
-            {
-
-            }
-
-
+            this.repositoryDoc.delete(this.DataDoc[index]);
+            this.DataDoc.RemoveAt(index);
+        }
+        public void update(Doctors doctors, int index)
+        {
+            this.DataDoc[index] = doctors;
+            this.repositoryDoc.update(doctors);
         }
     }
 }

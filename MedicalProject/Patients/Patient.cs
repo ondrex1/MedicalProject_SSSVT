@@ -21,5 +21,7 @@ namespace MedicalProject
         public string AdresaBydliste { get; set; }
         public string Pojistovna { get; set; }
 
+        public static int GetID { get; set; }
+
     }
 }

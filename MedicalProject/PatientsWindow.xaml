@@ -5,19 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedicalProject"
         mc:Ignorable="d"
-        Title="PatientsWindow" Height="750" Width="893.5" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <StackPanel Background="LightGreen">
-        <Grid HorizontalAlignment="Right" Height="85" Width="974" Margin="0,0,10,0"  >
-            <Button x:Name="AddPatientBtn" Content="přidat" Width="110" Click="AddPatientBtn_Click" Margin="302,26,562,11" />
-            <Button  HorizontalAlignment="Center" x:Name="DeletePatientBtn" Content="odstranit"  Width="110" Click="DeletePatientBtn_Click" Height="46" Margin="584,28,280,11" />
-            <Button  VerticalAlignment="Bottom" x:Name="EditPatientBtn" Content="upravit" Width="110" Click="EditPatientBtn_Click" Height="46" Margin="444,0,420,11"/>
-            <Button x:Name="ShowPatientCard" Content="karta pacienta" HorizontalAlignment="Left" Margin="106,26,0,0" VerticalAlignment="Top" Width="107" Height="48" Click="ShowPatientCard_Click"/>
-            <Button x:Name="backBtn" Content="zpět" HorizontalAlignment="Left" Margin="904,38,0,0" VerticalAlignment="Top" Width="60" Height="26" Click="backBtn_Click_1"/>
-        </Grid>
-
-
-        <Label Content="List pacientů" HorizontalAlignment="Center" Width="156" FontSize="22" Margin="363,10,369,10" FontFamily="Verdana" Height="35"/>
-        <DataGrid Background="LightGreen" x:Name="DataGridPatients" HorizontalAlignment="Stretch"  IsReadOnly="true" AutoGenerateColumns="False" Height="581" AlternatingRowBackground="#FFB6B6B6" SelectionChanged="DataGridPatients_SelectionChanged" >
+        Title="PatientsWindow" SizeToContent="Height" Width="700" WindowStartupLocation="CenterScreen">
+    <StackPanel Background="#FFB8EBF9">
+        
+        <Button x:Name="backBtn" Content="zpět" HorizontalAlignment="Right"  Width="60" Height="25" Click="backBtn_Click_1"/>
+        <Label Content="List pacientů" HorizontalAlignment="Center" FontSize="22"  FontFamily="Verdana" Height="35" Margin="10"/>
+        
+        <DataGrid ColumnHeaderHeight="30" x:Name="DataGridPatients"  IsReadOnly="true" AutoGenerateColumns="False" AlternatingRowBackground="#FFB6B6B6" SelectionChanged="DataGridPatients_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Gainsboro">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Jméno" Binding="{Binding Jmeno}" FontSize="20" CanUserResize="False"/>
                 <DataGridTextColumn Header="Příjmené" Binding="{Binding Prijmeni}" FontSize="20" CanUserResize="False"/>
@@ -28,16 +22,29 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" FontSize="20" CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Border BorderBrush="Black" BorderThickness="1" Height="2" RenderTransformOrigin="0.5,0.5">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
+        <Border Background="#FFBBBBBB" Width="400" Height="120" CornerRadius="20" Margin="20">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="AddPatientBtn" Content="přidat" Click="AddPatientBtn_Click" Margin="7" />
+                <Button x:Name="DeletePatientBtn" Margin="7" Content="odstranit"  Click="DeletePatientBtn_Click" Grid.Column="1" />
+                <Button x:Name="EditPatientBtn" Content="upravit"  Click="EditPatientBtn_Click" Grid.Column="2" Margin="7"/>
+
+                <Button x:Name="ShowPatientCard" Content="karta pacienta" Click="ShowPatientCard_Click" Grid.ColumnSpan="3" Margin="58,7" Grid.Row="1"/>
+
+            </Grid>
         </Border>
+
+
     </StackPanel>
 
 

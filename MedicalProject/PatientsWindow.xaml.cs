@@ -70,20 +70,27 @@ namespace MedicalProject
 
 
 
-
         private void ShowPatientCard_Click(object sender, RoutedEventArgs e)
         {
-            new SearchingPatient();
             RecordsWindow records = new RecordsWindow();
 
-            records.RecordName.Text = SearchingPatient.Jmeno;
-            records.RecordSurname.Text = SearchingPatient.Prijmeni;
-            records.RecordDate.Text = SearchingPatient.DatumNarozeni;
-            records.RecordStreet.Text = SearchingPatient.AdresaBydliste;
-            records.RecordNumber.Text = SearchingPatient.RodneCislo;
-            records.RecordInsurance.Text = SearchingPatient.Pojistovna;
-            records.RecordId.Text = SearchingPatient.Id.ToString();
+            var data = this.DataGridPatients.SelectedItem;
 
+            string name = (this.DataGridPatients.SelectedCells[0].Column.GetCellContent(data) as TextBlock)?.Text;
+            string surname = (this.DataGridPatients.SelectedCells[1].Column.GetCellContent(data) as TextBlock)?.Text;
+            string date = (this.DataGridPatients.SelectedCells[2].Column.GetCellContent(data) as TextBlock)?.Text;
+            string street = (this.DataGridPatients.SelectedCells[3].Column.GetCellContent(data) as TextBlock)?.Text;
+            string number = (this.DataGridPatients.SelectedCells[4].Column.GetCellContent(data) as TextBlock)?.Text;
+            string insurance = (this.DataGridPatients.SelectedCells[5].Column.GetCellContent(data) as TextBlock)?.Text;
+            int id = Convert.ToInt32((this.DataGridPatients.SelectedCells[6].Column.GetCellContent(data) as TextBlock)?.Text);
+
+            records.RecordName.Text = name;
+            records.RecordSurname.Text = surname;
+            records.RecordDate.Text = date;
+            records.RecordStreet.Text = street;
+            records.RecordNumber.Text = number;
+            records.RecordInsurance.Text = insurance;
+            records.RecordId.Text = id.ToString();
 
             records.Show();
             this.Close();
@@ -102,19 +109,13 @@ namespace MedicalProject
             try
             {
                 var data = this.DataGridPatients.SelectedItem;
-                SearchingPatient.Jmeno = (this.DataGridPatients.SelectedCells[0].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.Prijmeni = (this.DataGridPatients.SelectedCells[1].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.DatumNarozeni = (this.DataGridPatients.SelectedCells[2].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.AdresaBydliste = (this.DataGridPatients.SelectedCells[3].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.RodneCislo = (this.DataGridPatients.SelectedCells[4].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.Pojistovna = (this.DataGridPatients.SelectedCells[5].Column.GetCellContent(data) as TextBlock)?.Text;
-                SearchingPatient.Id = Convert.ToInt32((this.DataGridPatients.SelectedCells[6].Column.GetCellContent(data) as TextBlock)?.Text);
-                UpdateLayout();
+                Patient.GetID = Convert.ToInt32((this.DataGridPatients.SelectedCells[6].Column.GetCellContent(data) as TextBlock)?.Text);
             }
             catch
             {
-                
+
             }
+
         }
     }
 }
